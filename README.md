@@ -43,22 +43,22 @@ Operating System
 
 
 
-Jump Box
+Jump-Box-Provisioner
 Gateway
-10.0.0.1
+10.0.1.4
 Linux
 
 
-TODO
+Web-1
+WebServer
+10.0.1.5
+Linux
 
 
-
-
-
-TODO
-
-
-
+Web-2
+WebServer
+10.0.1.6
+Linux
 
 
 TODO
