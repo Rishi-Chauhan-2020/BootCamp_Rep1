@@ -75,51 +75,32 @@ Jump-Box-Provisioner (10.0.1.4)
 A summary of the access policies in place can be found in the table below.<br>
 
 
-| Name                 | Publicly Accessible | Allowed IP Addresses  | 
-| :-------------------:| :-----------------: | :-----------: |
-| Jump-Box-Provisioner | Yes                 | 10.0.1.4     | 
-| Web-1                | WebServer           | 10.0.1.5     | 
-| Web-2                | WebServer           | 10.0.1.6     | 
-| ELK                  | ELK Server          | 10.1.0.4     |
-|                      |                     |              |
 
+
+| Name                 | Publicly Accessible | Allowed IP Addresses            | Protocol (port)    |
+| :-------------       | :----------:        | -----------:                    | -----------:       |
+| Jump-Box-Provisioner | Yes                 | 103.140.129.87  & 49.36.167.231 | SSH(22), RDP(3389) |
+| Web-1                | No                  | N/A                             | N/A                |
+| Web-2                | No                  | N/A                             | N/A                |
+| Red-Team-LB          | Yes                 | 103.140.129.87  & 49.36.167.231 | HTTP(80)           |
+| ELK                  | Yes                 | 103.140.129.87  & 49.36.167.231 | HTTP(5601)         |
+|                      |                     |                                 |                    |
 <br>
-
-Name
-Publicly Accessible
-Allowed IP Addresses
-
-
-
-
-Jump Box
-Yes/No
-10.0.0.1 10.0.0.2
-
-
-
-
-
-
-
-
-
-
-
 
 
 
 Elk Configuration
-Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-
-TODO: What is the main advantage of automating configuration with Ansible?
+Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because it dramatically improves the scalability, consistency, and reliability of your IT environment.It can manage the infrastructure, networks, operating systems and services that we are already using. Ansible provides Orchestration in the sense of aligning the business request with the applications, data, and infrastructure
 
 The playbook implements the following tasks:
 
-TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc.
-...
-...
+TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc.<br>  
+1- Install Docker<br> 
+2- Install Python<br> 
+3- Ensure /Increase Virtual memory to 262144<br>
+4- Download and configure docker ELK container to start and use ports 5601,9200,5044.<br> 
 
+<u>**DONE TILL HERE**<br> </u> 
 The following screenshot displays the result of running docker ps after successfully configuring the ELK instance.
 Note: The following image link needs to be updated. Replace docker_ps_output.png with the name of your screenshot image file.
 
