@@ -22,7 +22,7 @@ The files in this repository were used to configure the network depicted below. 
 <br>
 These Ansible scripts have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the ansible YML script file may be used to install only certain pieces of it, such as Filebeat.<br> 
 
-Loaction of Ansible scripts: [YML Scripts](https://https://github.com/Rishi-Chauhan-2020/BootCamp_Rep1/tree/main/Ansible)
+Loaction of Ansible scripts: [YML Scripts](https://github.com/Rishi-Chauhan-2020/BootCamp_Rep1/blob/main/Ansible)
 
 | Name of script                   | Function                                                                                                                                                   |
 | :-------------                   | :--------------------------------------------------------------------------------------------------------------------------------------------------------: | 
