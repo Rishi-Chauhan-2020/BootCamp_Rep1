@@ -3,7 +3,7 @@ The files in this repository were used to configure the network depicted below. 
  
 [Network Diagram](https://github.com/Rishi-Chauhan-2020/BootCamp_Rep1/blob/main/Diagram/Rishi_Class2_Week12_Network%20Diagram.drawio)
 
-[![Network Diagram](https://github.com/Rishi-Chauhan-2020/BootCamp_Rep1/blob/main/Diagram/Rishi_Class2_Week12_Network%20Diagram.jpg)](https://github.com/Rishi-Chauhan-2020/BootCamp_Rep1/blob/main/Diagram/Rishi_Class2_Week12_Network%20Diagram.jpg)
+[![Network Diagram](https://github.com/Rishi-Chauhan-2020/BootCamp_Rep1/blob/main/Diagram/Rishi_Class2_Week12_Network%20Diagram.PNG)](https://github.com/Rishi-Chauhan-2020/BootCamp_Rep1/blob/main/Diagram/Rishi_Class2_Week12_Network%20Diagram.PNG)
 
 <u>**How to use Ansible Build**</u>
 <br>
