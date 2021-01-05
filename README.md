@@ -1,8 +1,31 @@
-Automated ELK Stack Deployment
-The files in this repository were used to configure the network depicted below.
-Note: The following image link needs to be updated. Replace diagram_filename.png with the name of your diagram image file.
+<u>**Automated ELK Stack Deployment :**</u>
+The files in this repository were used to configure the network depicted below. <br>  
+ 
+[Network Diagram](https://github.com/Rishi-Chauhan-2020/BootCamp_Rep1/blob/main/Diagram/Rishi_Class2_Week12_Network%20Diagram.drawio)
 
-These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the _____ file may be used to install only certain pieces of it, such as Filebeat.
+[![Network Diagram](https://github.com/Rishi-Chauhan-2020/BootCamp_Rep1/blob/main/Diagram/Rishi_Class2_Week12_Network%20Diagram.jpg)](https://github.com/Rishi-Chauhan-2020/BootCamp_Rep1/blob/main/Diagram/Rishi_Class2_Week12_Network%20Diagram.jpg)
+
+<u>**How to use Ansible Build**</u>
+<br>
+These Ansible scripts have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the ansible YML script file may be used to install only certain pieces of it, such as Filebeat.
+
+Loaction of Ansible scripts: [YML Scripts](https://https://github.com/Rishi-Chauhan-2020/BootCamp_Rep1/tree/main/Ansible)
+
+| Name of script                   | Function                                                                                                                                                   |
+| :-------------                   | :--------------------------------------------------------------------------------------------------------------------------------------------------------: | 
+| my-playbook.yml.txt              | This script will install Apache2 on Webservers.<br> Webserver's IP address shall be defined <br> in host file of Ansible                                            | 
+| playbook-docker-python3.yml.txt  | This script will configure webserver virtual <br> machines with Docker, Python and setup <br> DVWA container                                                         |
+| install-elk.yml.txt              | This script will configure ELK virtual mahcine <br> with docker, install python, increase <br>virtual memory to 262144, configure ELK with <br>ports 5601/9200/5044     | 
+| metricbeat-playbook.yml.txt      | This script will install and configure webservers <br> with metricbeat  | 
+| filebeat-playbook.yml.txt        | This script will install and configure webservers <br>with filebeat    |
+|                                  |              |
+<br>
+
+
+
+
+Availability : Load balancing ensures that the application will be high availability. Load Balancer is put in with two webservers ( web-1 & Web-2) in backend pool, with a health probe to monitor the webservers hosting DVWA (D*am Vulnerable Web Application). Loadbalancer public IP fronts and restrict network access. <br>
+
 
 TODO: Enter the playbook file.
 
@@ -31,45 +54,20 @@ TODO: What does Filebeat watch for?
 TODO: What does Metricbeat record?
 
 The configuration details of each machine may be found below.
-Note: Use the Markdown Table Generator to add/remove values from the table.
 
 
-
-Name
-Function
-IP Address
-Operating System
-
-
-
-
-Jump Box
-Gateway
-10.0.0.1
-Linux
-
-
-TODO
+| Name                 | Function     | IP Address   | Operating System   |
+| :-------------       | :----------: | -----------: | -----------:       |
+| Jump-Box-Provisioner | Gateway      | 10.0.1.4     | Linux-Ubuntu       |
+| Web-1                | WebServer    | 10.0.1.5     | Linux-Ubuntu       |
+| Web-2                | WebServer    | 10.0.1.6     | Linux-Ubuntu       |
+| ELK                  | ELK Server   | 10.1.0.4     | Linux-Ubuntu       |
+|                      |              |              |                    |
 
 
 
 
-
-TODO
-
-
-
-
-
-TODO
-
-
-
-
-
-
-
-Access Policies
+<br>Access Policies
 The machines on the internal network are not exposed to the public Internet.
 Only the _____ machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
 
@@ -151,3 +149,5 @@ Which file do you update to make Ansible run the playbook on a specific machine?
 _Which URL do you navigate to in order to check that the ELK server is running?
 
 As a Bonus, provide the specific commands the user will need to run to download the playbook, update the files, etc.
+
+
