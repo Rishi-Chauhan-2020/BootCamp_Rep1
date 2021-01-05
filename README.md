@@ -37,36 +37,28 @@ Loaction of Ansible scripts: [YML Scripts](https://github.com/Rishi-Chauhan-2020
 
 
 
-Availability : Load balancing ensures that the application will be high availability. Load Balancer is put in with two webservers ( web-1 & Web-2) in backend pool, with a health probe to monitor the webservers hosting DVWA (D*am Vulnerable Web Application). Loadbalancer public IP fronts and restrict network access. <br>
+<u>**High Availability**</u> : Load balancing ensures that the application will be high availability. Load Balancer is put in with two webservers ( web-1 & Web-2) in backend pool, with a health probe to monitor the webservers hosting DVWA (D*am Vulnerable Web Application). Loadbalancer public IP fronts and restrict network access. <br>
+
+|Load Balancer :       | Red-Team-LB                                                        | 
+| :-------------------:| :----------------------------------------------------------------: | 
+| Backend pool         | RedTeam-LB-Backendpool (2 virtual machines)<br>web-1 and Web-2     | 
+| Health probe         | RedTeamProbe (Tcp:80)                                              |
+| Load balancing rule  | REd_team_LB_port80_fwdto_VNet (Tcp/80)                             |
+| Public IP address    | 52.149.144.98 (REd-Team_LB-IP)                                     |
+|                      |              |
+
+<br>
+
+Primary function of a load balancer is to spread workloads across multiple servers to prevent overloading servers, optimize productivity, and maximize uptime. Load balancers also add resiliency by rerouting live traffic from one server to another if a server falls prey to DDoS attacks or otherwise becomes unavailable. In this way, load balancers help to eliminate single points of failure, reduce the attack surface, and make it harder to exhaust resources and saturate links.
+
+We also have a Jumpbox server which act as a gateway.A jump server, jump host or jump box is a system on a network used to access and manage devices in a separate security zone. A jump server is a hardened and monitored device that spans two dissimilar security zones and provides a controlled means of access between them. In our setup, access policies only allow inbound ssh connections to jumpbox and not to any other VM, thus preventing exposure.
 
 
-TODO: Enter the playbook file.
+Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the logs and system traffic.
 
-This document contains the following details:
-
-Description of the Topologu
-Access Policies
-ELK Configuration
-
-Beats in Use
-Machines Being Monitored
-
-
-How to Use the Ansible Build
-
-
-Description of the Topology
-The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
-Load balancing ensures that the application will be highly _____, in addition to restricting _____ to the network.
-
-TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?
-
-Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _____ and system _____.
-
-TODO: What does Filebeat watch for?
-TODO: What does Metricbeat record?
-
-
+<u>**Filebeat & Metricbeat**</u><br>
+Installed as an agent on our webservers ( Web-1 and Web-2), Filebeat monitors the log files or locations that we specify, collects log events, and forwards them to Elasticsearch / logstash for indexing
+Metricbeat is also installed as agent on our webservers (Web-1 and Web-2),  it collects system-level CPU usage, memory, file system, disk IO, and network IO statistics, as well as top-like statistics for every process running
 
 
 
@@ -74,17 +66,24 @@ TODO: What does Metricbeat record?
 =======
 
 The machines on the internal network are not exposed to the public Internet.
-Only the _____ machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
+Only the Jumpserver machine(Jump-Box-Provisioner) can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses: 103.140.129.87,49.36.167.231
 
-TODO: Add whitelisted IP addresses
-
-Machines within the network can only be accessed by _____.
-
-TODO: Which machine did you allow to access your ELK VM? What was its IP address?
-
-A summary of the access policies in place can be found in the table below.
+Machines within the network can only be accessed by Jumpserver server:<br>
+Jump-Box-Provisioner (10.0.1.4)
 
 
+A summary of the access policies in place can be found in the table below.<br>
+
+
+| Name                 | Publicly Accessible | Allowed IP Addresses  | 
+| :-------------------:| :-----------------: | :-----------: |
+| Jump-Box-Provisioner | Yes                 | 10.0.1.4     | 
+| Web-1                | WebServer           | 10.0.1.5     | 
+| Web-2                | WebServer           | 10.0.1.6     | 
+| ELK                  | ELK Server          | 10.1.0.4     |
+|                      |                     |              |
+
+<br>
 
 Name
 Publicly Accessible
