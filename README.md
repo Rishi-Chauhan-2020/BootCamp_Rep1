@@ -54,6 +54,7 @@ TODO: What does Filebeat watch for?
 TODO: What does Metricbeat record?
 
 The configuration details of each machine may be found below.
+<<<<<<< HEAD
 
 
 | Name                 | Function     | IP Address   | Operating System   |
@@ -68,6 +69,47 @@ The configuration details of each machine may be found below.
 
 
 <br>Access Policies
+=======
+Note: Use the Markdown Table Generator to add/remove values from the table.
+
+
+
+Name
+Function
+IP Address
+Operating System
+
+
+
+
+Jump-Box-Provisioner
+Gateway
+10.0.1.4
+Linux
+
+
+Web-1
+WebServer
+10.0.1.5
+Linux
+
+
+Web-2
+WebServer
+10.0.1.6
+Linux
+
+
+TODO
+
+
+
+
+
+
+
+Access Policies
+>>>>>>> 6337d8b9f85551945317a2e7f61a715e9d99cbb1
 The machines on the internal network are not exposed to the public Internet.
 Only the _____ machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
 
@@ -149,5 +191,8 @@ Which file do you update to make Ansible run the playbook on a specific machine?
 _Which URL do you navigate to in order to check that the ELK server is running?
 
 As a Bonus, provide the specific commands the user will need to run to download the playbook, update the files, etc.
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 6337d8b9f85551945317a2e7f61a715e9d99cbb1
