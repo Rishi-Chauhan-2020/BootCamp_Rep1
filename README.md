@@ -1,13 +1,26 @@
 <u>**Automated ELK Stack Deployment :**</u>
 The files in this repository were used to configure the network depicted below. <br>  
  
-[Network Diagram](https://github.com/Rishi-Chauhan-2020/BootCamp_Rep1/blob/main/Diagram/Rishi_Class2_Week12_Network%20Diagram.drawio)
+[Network Diagram](https://github.com/Rishi-Chauhan-2020/BootCamp_Rep1/blob/main/Diagram/)
 
 [![Network Diagram](https://github.com/Rishi-Chauhan-2020/BootCamp_Rep1/blob/main/Diagram/Rishi_Class2_Week12_Network%20Diagram.PNG)](https://github.com/Rishi-Chauhan-2020/BootCamp_Rep1/blob/main/Diagram/Rishi_Class2_Week12_Network%20Diagram.PNG)
 
-<u>**How to use Ansible Build**</u>
+
+
+<br><br>The configuration details of each machine may be found below.
+
+
+| Name                 | Function     | IP Address   | Operating System   |
+| :-------------       | :----------: | -----------: | -----------:       |
+| Jump-Box-Provisioner | Gateway      | 10.0.1.4     | Linux-Ubuntu       |
+| Web-1                | WebServer    | 10.0.1.5     | Linux-Ubuntu       |
+| Web-2                | WebServer    | 10.0.1.6     | Linux-Ubuntu       |
+| ELK                  | ELK Server   | 10.1.0.4     | Linux-Ubuntu       |
+|                      |              |              |                    |
+
+<br><u>**How to use Ansible Build**</u>
 <br>
-These Ansible scripts have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the ansible YML script file may be used to install only certain pieces of it, such as Filebeat.
+These Ansible scripts have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the ansible YML script file may be used to install only certain pieces of it, such as Filebeat.<br> 
 
 Loaction of Ansible scripts: [YML Scripts](https://https://github.com/Rishi-Chauhan-2020/BootCamp_Rep1/tree/main/Ansible)
 
@@ -53,63 +66,13 @@ Integrating an ELK server allows users to easily monitor the vulnerable VMs for 
 TODO: What does Filebeat watch for?
 TODO: What does Metricbeat record?
 
-The configuration details of each machine may be found below.
-<<<<<<< HEAD
-
-
-| Name                 | Function     | IP Address   | Operating System   |
-| :-------------       | :----------: | -----------: | -----------:       |
-| Jump-Box-Provisioner | Gateway      | 10.0.1.4     | Linux-Ubuntu       |
-| Web-1                | WebServer    | 10.0.1.5     | Linux-Ubuntu       |
-| Web-2                | WebServer    | 10.0.1.6     | Linux-Ubuntu       |
-| ELK                  | ELK Server   | 10.1.0.4     | Linux-Ubuntu       |
-|                      |              |              |                    |
 
 
 
 
 <br>Access Policies
 =======
-Note: Use the Markdown Table Generator to add/remove values from the table.
 
-
-
-Name
-Function
-IP Address
-Operating System
-
-
-
-
-Jump-Box-Provisioner
-Gateway
-10.0.1.4
-Linux
-
-
-Web-1
-WebServer
-10.0.1.5
-Linux
-
-
-Web-2
-WebServer
-10.0.1.6
-Linux
-
-
-TODO
-
-
-
-
-
-
-
-Access Policies
->>>>>>> 6337d8b9f85551945317a2e7f61a715e9d99cbb1
 The machines on the internal network are not exposed to the public Internet.
 Only the _____ machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
 
