@@ -1,0 +1,11 @@
+---
+- name: My first playbook
+  hosts: webservers
+#This will pick webservers defined in ansible host file at /etc/ansible/host
+  become: true
+  tasks:
+
+  - name: Install apache2 httpd
+    apt:
+      name: apache2
+      state: present
