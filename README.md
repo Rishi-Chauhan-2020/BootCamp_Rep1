@@ -171,7 +171,7 @@ Verification once playbooks are run:
 
 - <u>For Elasticsearch server</u>: navigate to `http://IPofELK_server:5601/app/kibana#/home` to check that the installation worked as expected. You will see the webpage as :
 
-  ![DVWApage](Images/Kibana_page.png)
+  ![DVWApage](https://github.com/Rishi-Chauhan-2020/BootCamp_Rep1/blob/main/Images/DVWApage.PNG)
 
 
 
