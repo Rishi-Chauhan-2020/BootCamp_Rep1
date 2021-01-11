@@ -1,13 +1,13 @@
-<u>**Automated ELK Stack Deployment :**</u>
+# <u>**Automated ELK Stack Deployment :**</u>
 The files in this repository were used to configure the network depicted below. <br>  
  
 [Network Diagram](https://github.com/Rishi-Chauhan-2020/BootCamp_Rep1/blob/main/Diagram/)
 
-[![Network Diagram](https://github.com/Rishi-Chauhan-2020/BootCamp_Rep1/blob/main/Diagram/Rishi_Class2_Week12_Network%20Diagram.PNG)](https://github.com/Rishi-Chauhan-2020/BootCamp_Rep1/blob/main/Diagram/Rishi_Class2_Week12_Network%20Diagram.PNG)
+![Network](Diagram/Rishi_Class2_Week12_Network_Diagram.PNG)
 
 
 
-<br><br>The configuration details of each machine may be found below.
+### <br><br>The configuration details of each machine may be found below.
 
 
 | Name                 | Function     | IP Address   | Operating System   |
@@ -18,11 +18,11 @@ The files in this repository were used to configure the network depicted below. 
 | ELK                  | ELK Server   | 10.1.0.4     | Linux-Ubuntu       |
 |                      |              |              |                    |
 
-<br><u>**How to use Ansible Build**</u>
+### <br><u>**How to use Ansible Build**</u>
 <br>
 These Ansible scripts have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the ansible YML script file may be used to install only certain pieces of it, such as Filebeat.<br> 
 
-Loaction of Ansible scripts: [YML Scripts](https://github.com/Rishi-Chauhan-2020/BootCamp_Rep1/blob/main/Ansible)
+Loaction of Ansible scripts: <u>[YML Scripts](https://github.com/Rishi-Chauhan-2020/BootCamp_Rep1/blob/main/Ansible)</u>
 
 | Name of script                   | Function                                                                                                                                                   |
 | :-------------                   | :--------------------------------------------------------------------------------------------------------------------------------------------------------: | 
@@ -37,7 +37,8 @@ Loaction of Ansible scripts: [YML Scripts](https://github.com/Rishi-Chauhan-2020
 
 
 
-<u>**High Availability**</u> : Load balancing ensures that the application will be high availability. Load Balancer is put in with two webservers ( web-1 & Web-2) in backend pool, with a health probe to monitor the webservers hosting DVWA (D*am Vulnerable Web Application). Loadbalancer public IP fronts and restrict network access. <br>
+### <u>**High Availability**</u> :
+ Load balancing ensures that the application will be high availability. Load Balancer is put in with two webservers ( web-1 & Web-2) in backend pool, with a health probe to monitor the webservers hosting DVWA (D*am Vulnerable Web Application). Loadbalancer public IP fronts and restrict network access. <br>
 
 |Load Balancer :       | Red-Team-LB                                                        | 
 | :-------------------:| :----------------------------------------------------------------: | 
@@ -56,21 +57,19 @@ We also have a Jumpbox server which act as a gateway.A jump server, jump host or
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the logs and system traffic.
 
-<u>**Filebeat & Metricbeat**</u><br>
+### **Filebeat & Metricbeat**<br>
 Installed as an agent on our webservers ( Web-1 and Web-2), Filebeat monitors the log files or locations that we specify, collects log events, and forwards them to Elasticsearch / logstash for indexing
 Metricbeat is also installed as agent on our webservers (Web-1 and Web-2),  it collects system-level CPU usage, memory, file system, disk IO, and network IO statistics, as well as top-like statistics for every process running
 
 
 
-<br>Access Policies
-=======
+### <br>**Access Policies**<br>
 
 The machines on the internal network are not exposed to the public Internet.
 Only the Jumpserver machine(Jump-Box-Provisioner) can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses: 103.140.129.87,49.36.167.231
 
 Machines within the network can only be accessed by Jumpserver server:<br>
 Jump-Box-Provisioner (10.0.1.4)
-
 
 A summary of the access policies in place can be found in the table below.<br>
 
@@ -89,53 +88,97 @@ A summary of the access policies in place can be found in the table below.<br>
 
 
 
-Elk Configuration
+### **Elk Configuration**
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because it dramatically improves the scalability, consistency, and reliability of your IT environment.It can manage the infrastructure, networks, operating systems and services that we are already using. Ansible provides Orchestration in the sense of aligning the business request with the applications, data, and infrastructure
 
-The playbook implements the following tasks:
-
-TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc.<br>  
+The playbook implements the following tasks:<br>  
 1- Install Docker<br> 
 2- Install Python<br> 
-3- Ensure /Increase Virtual memory to 262144<br>
-4- Download and configure docker ELK container to start and use ports 5601,9200,5044.<br> 
+3- Assign Virtual memory 262144<br>
+4- Download and configure docker ELK container to start and use ports 5601, 9200, 5044.<br> 
 
-<u>**DONE TILL HERE**<br> </u> 
 The following screenshot displays the result of running docker ps after successfully configuring the ELK instance.
-Note: The following image link needs to be updated. Replace docker_ps_output.png with the name of your screenshot image file.
+
+![ELK Instance](Images/ELK_Sudo_Docker_PS.PNG)
 
 
-Target Machines & Beats
+### <u>Target Machines & Beats</u>
 This ELK server is configured to monitor the following machines:
 
-TODO: List the IP addresses of the machines you are monitoring
+| Name                 | IP Addresses  (priv)| Role          |
+| :-------------       | :----------:        | -----------:  |
+| Web-1                | 10.0.1.5            | Webserver     |
+| Web-2                | 10.0.1.6            | Webserver     |
+|                      |                     |               |
+<br>
 
 We have installed the following Beats on these machines:
 
-TODO: Specify which Beats you successfully installed
+- Metricbeat - 7.6.1
+- Filebeat - 7.6.1
 
 These Beats allow us to collect the following information from each machine:
 
-TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., Winlogbeat collects Windows logs, which we use to track user logon events, etc.
+#### <u>Metricbeat</u>:
+Metricbeat is a lightweight shipper that you can install on your servers to periodically collect metrics from the *`operating system and from services running`* on the server. Metricbeat takes the metrics and statistics that it collects and ships them to the output that we specify. Such as in this setup, we have Metricbeat installed on our Webservers ( Web-1 & Web-2 ), it collects and ship it to the Elasticsearch VM (ELK) we have.
+
+ <u>Metricbeat features</u>:
+ - System-Level Monitoring
+ - System-Level CPU usage statistics
+ - Network IO statistics
+
+#### <u>Filebeat</u>:
+ Filebeat is a lightweight shipper for forwarding and centralizing log data. Installed as an agent on your servers, Filebeat monitors the *`log files or locations that you specify`*, collects log events, and forwards them to Elasticsearch, in this case ship them to our ELK VM
+
+### <u>Using the Playbooks</u>
+In order to use the playbook, you will need to have an Ansible control node already configured along with the destination node. Assuming you have such a control node provisioned:<br>
+- SSH into the control node
+- Copy the *`playbook-docker-python3.yml, metricbeat-playbook.yml, filebeat-playbook.yml, install-elk.yml `* files to your ansible control node's *`/etc/ansible/files`*.
+- Update the *`/etc/anshible/hosts`* file to include *`IP address of Webservers`*
+- Update the *`/etc/anshible/hosts`* file to include *`IP address of Elasticsearch server`*
+
+    This will tell Playbook which hosts to install ELK vs which host to install filebeat and metricbeat. Example:
+
+   ```
+  [ webservers ]
+  `IP address of webserver` ansible_python_interpreter=/usr/bin/python3
+  [elk]
+  `IP address of Elasticsearch server` ansible_python_interpreter=/usr/bin/python3
+
+  ```
+
+    The Playbook will define this in `host section`
+  ```
+    ---
+    - name: Configure Elk VM with Docker
+      hosts: elk
+      remote_user: sysadmin
+      become: true
+      tasks:
+  ```
+
+- From control node run the playbook *`ansible-playbook playbook-docker-python3.yml`*. This will setup Webservers with docker, python and DVWA container.
+- Run playbook *`ansible-playbook metricbeat-playbook.yml`* & *`ansible-playbook filebeat-playbook.yml`* , these will install Filebeat and Metricbeat on Webservers.
+- Run playbook *`ansible-playbook install-elk.yml`*, this will install and configure Elasticsearch VM with docker, python, set vitrual memory and install ELK container
 
 
-Using the Playbook
-In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned:
-SSH into the control node and follow the steps below:
+Verification once playbooks are run:
 
-Copy the _____ file to _____.
-Update the _____ file to include...
-Run the playbook, and navigate to ____ to check that the installation worked as expected.
+- <u>For Webservers - DVWA</u>: navigate to `http://IPofWebLoadbalancer/index.php` to check that the installation worked as expected. You will see the webpage as :
 
-TODO: Answer the following questions to fill in the blanks:
-
-Which file is the playbook? Where do you copy it?
-Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?
-_Which URL do you navigate to in order to check that the ELK server is running?
-
-As a Bonus, provide the specific commands the user will need to run to download the playbook, update the files, etc.
-<<<<<<< HEAD
+    ![DVWApage](Images/DVWApage.png)
 
 
-=======
->>>>>>> 6337d8b9f85551945317a2e7f61a715e9d99cbb1
+- <u>For Elasticsearch server</u>: navigate to `http://IPofELK_server:5601/app/kibana#/home` to check that the installation worked as expected. You will see the webpage as :
+
+    ![DVWApage](Images/Kibana_page.png)
+
+
+
+<br>
+
+
+- Command to download Playbooks :
+  ```
+    wget -c https://github.com/Rishi-Chauhan-2020/BootCamp_Rep1/tree/main/Ansible/Playbooks.zip
+  ```

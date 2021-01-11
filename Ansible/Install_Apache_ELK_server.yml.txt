@@ -1,5 +1,5 @@
 ---
-- name: My first playbook
+- name: Install Apache on ELK server
   hosts: webservers
 #This will pick webservers defined in ansible host file at /etc/ansible/host
   become: true
